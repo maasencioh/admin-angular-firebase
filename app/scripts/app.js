@@ -10,12 +10,10 @@
  */
 angular
   .module('adminAngularFirebaseApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
+    'ngMessages',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngMaterial'
   ])
   .config(function ($routeProvider) {
     $routeProvider
