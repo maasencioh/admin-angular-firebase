@@ -8,26 +8,30 @@
  *
  * Main module of the application.
  */
-angular
-  .module('adminAngularFirebaseApp', [
-    'ngMessages',
-    'ngRoute',
-    'ngSanitize',
-    'ngMaterial'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+angular.module('adminAngularFirebaseApp', [
+  'ngMessages',
+  'ngRoute',
+  'ngSanitize',
+  'ngMaterial'
+])
+.config(function ($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl',
+      controllerAs: 'main'
+    })
+    .when('/about', {
+      templateUrl: 'views/about.html',
+      controller: 'AboutCtrl',
+      controllerAs: 'about'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+})
+.run(function ($rootScope, $mdSidenav) {
+  $rootScope.toggleSidenav = function () {
+    $mdSidenav('left').toggle();
+  };
+});

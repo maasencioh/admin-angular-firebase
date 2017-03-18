@@ -21,18 +21,39 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ng-view=""></div>
+    <!-- Title -->
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleSidenav()">
+          <md-icon md-svg-icon="images/icons/menu.svg"></md-icon>
+        </md-button>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        <h2 flex md-truncate>Administrador de armónico</h2>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="images/icons/eye.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <!-- Container -->
+    <div flex layout="row">
+
+      <!-- Sidenav -->
+      <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+        <md-toolbar class="md-theme-light">
+          <h1 class="md-toolbar-tools">Menu de administrador</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+          Hello
+        </md-content>
+      </md-sidenav>
+
+      <!-- Content -->
+      <md-content flex id="content">
+        <div ng-view=""></div>
+      </md-content>
+    </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
