@@ -30,7 +30,7 @@
 
         <h2 flex md-truncate>Administrador de armónico</h2>
 
-        <md-button class="md-icon-button" aria-label="More">
+        <md-button class="md-icon-button" aria-label="More" ng-click="showConfirm()">
           <md-icon md-svg-icon="images/icons/eye.svg"></md-icon>
         </md-button>
       </div>
@@ -42,7 +42,12 @@
       <!-- Sidenav -->
       <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
         <md-toolbar class="md-theme-light">
-          <h1 class="md-toolbar-tools">Menu de administrador</h1>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleSidenav()">
+              <md-icon md-svg-icon="images/icons/back_arrow.svg"></md-icon>
+            </md-button>
+            <h2>Menu de administrador</h2>
+          </div>
         </md-toolbar>
         <md-content layout-padding>
           Hello
